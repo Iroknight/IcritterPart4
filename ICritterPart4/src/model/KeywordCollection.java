@@ -93,7 +93,8 @@ public class KeywordCollection {
 		if(unionSize >0)
 			return intersectSize/unionSize;
 		else
-			return 1;//if neither Critter has any interests, then they share all interests
+			throw new NoInterestsException(); // Neither ICritters have interests.
+			// (Commented this out because we have an exception to handle it nowreturn 1;//if neither Critter has any interests, then they share all interests
 	}
 	
 	

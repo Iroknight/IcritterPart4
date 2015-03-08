@@ -178,6 +178,9 @@ public class Owner extends Observable{
 	 */
 	private void adjustCredits(Integer amount){
 		credits += amount;
+		if (credits < 0) {
+			throw new NotEnoughCreditsException(-amount, credits);
+		}
 		setChanged();//let our observers know we have changed
 		notifyObservers(new ICritterUpdate(ICritterUpdate.UPDATE_OWNER));
 	}
