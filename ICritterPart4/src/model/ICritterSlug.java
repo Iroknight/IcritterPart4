@@ -19,4 +19,14 @@ public class ICritterSlug extends LandICritter {
 		// Auto-generated constructor stub
 	}
 
+	public void interact(ICritter other) {
+
+		try {
+			interestCorrelation(other);
+		} catch (NoInterestsException e) {
+			System.out.println(e);
+			addFriend(other);
+		}
+	}
+
 }
